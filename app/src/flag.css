@@ -1,0 +1,48 @@
+.flag{
+    padding-left: '17px';
+    display: 'inline-block';
+    visibility: 'visible';
+    background-color: 'green';
+  }
+  /* 绿旗 */
+#green-flag{
+  height: '17px';
+  width: '1px';
+  padding-left: '17px';
+  display: 'inline-block';
+  visibility: 'visible';
+  background-color: 'green';
+  background: 'url(qizi.png) no-repeat -120px -207px';
+}
+/* 紫旗 */
+#purple-flag{
+    height: '17px';
+    width: '1px';
+    background: 'url(qizi.png) no-repeat -80px -207px';
+}
+/*灰旗*/
+#gray-flag{
+  height: '17px';
+  width: '1px';
+  background: 'url(qizi.png) no-repeat -127px -127px';
+}
+/*红旗*/
+#red-flag{
+  height: '17px';
+  width: '1px';
+  background: 'url(qizi.png) no-repeat -120px -207px';
+}
+
+/* 黄旗 */
+#yellow-flag{
+  height: '17px';
+  width: '1px';
+  background: 'require(./public/qizi.png) no-repeat -120px -207px';
+}
+
+/*蓝旗*/
+#blue-flag{
+  height: '17px';
+  width: '1px';
+  background: 'require(qizi.png) no-repeat -120px -207px';
+}

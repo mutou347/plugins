@@ -1,0 +1,14 @@
+cn\myjo\queryInventory\pojo\ItemSkuPO.class
+cn\myjo\queryInventory\Application.class
+cn\myjo\queryInventory\pojo\DaysBuf.class
+cn\myjo\queryInventory\service\ExtensionService.class
+cn\myjo\queryInventory\controller\ArtificialController.class
+cn\myjo\queryInventory\API\TaoBaoHttpClint.class
+cn\myjo\queryInventory\pojo\ApiConfiguration.class
+cn\myjo\queryInventory\pojo\Memo.class
+cn\myjo\queryInventory\service\ExtensionServiceImpl.class
+cn\myjo\queryInventory\dao\ItemIdMapper.class
+cn\myjo\queryInventory\controller\MechineController.class
+cn\myjo\queryInventory\pojo\vo\UpdateFlagVO.class
+cn\myjo\queryInventory\task\ItemTask.class
+cn\myjo\queryInventory\WebMvcConfiguration.class

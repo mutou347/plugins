@@ -1,0 +1,21 @@
+server: 
+  port: 80
+  tomcat:
+    uri-encoding: utf-8
+spring: 
+    http: 
+      encoding: 
+        charset: UTF-8
+        enabled: 'true'
+        force: 'true'
+    messages:
+      encoding: UTF-8
+    datasource: 
+        driverClassName: com.mysql.jdbc.Driver
+
+        url: jdbc:mysql://127.0.0.1:3306/autoorder?useSSL=false
+        username: root
+        password: root
+
+#logging:
+#    config: e:\\oc2\plagin\config\logback-spring.xml

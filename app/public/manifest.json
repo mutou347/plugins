@@ -1,0 +1,17 @@
+{
+   "browser_action": {
+      "default_icon": "icon-128.png",
+      "default_title": "我的管理页面",
+      "default_popup": "index.html"
+   },
+   "description": "OrderCat2-扩展程序",
+   "icons": {
+      "128": "icon-128.png",
+      "16": "icon-128.png",
+      "48": "icon-128.png"
+   },
+   "manifest_version": 2,
+   "name": "缺货通知",
+   "version": "1.0",
+   "web_accessible_resources": [ "icon-128.png", "loading.gif" ]
+}

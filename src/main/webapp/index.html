@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>前台页面</title>
+		<script src="js/lib/react.min.js"></script>
+    	<script src="js/lib/react-dom.min.js"></script>
+    	<script src="js/lib/babel.min.js"></script>
+		<script src="js/lib/jquery.min.js"></script>  
+<!-- 	
+
+
+<script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    	<script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    	<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script> -->
+	</head>
+	<body>
+		<div id="oc2-table-div"></div>
+	</body>
+	<script type="text/babel">
+		const headers=['订单ID','买家昵称','货号','尺码','实付金额','付款时间','短信','临时'];
+		class HelloMessage extends React.Component {
+			constructor(){
+				super();
+				this.state={
+					data:[]
+				};
+			}
+			componentWillMount(){
+				$.ajax({
+					url:"http://localhost:8080/",
+					async:false,
+					type:"GET",
+					dataType:'json',
+					success:function(resData){
+						console.log(resData);
+						this.setState({
+							data:resData
+						});
+					}.bind(this)
+			});
+		}
+			render(){
+				//console.log("你好");
+				const data=this.state.data;
+				//style css样式初始化
+				var table={
+						width:'600px',
+						textAlign:'center',
+						border: '1px solid  #E4E4E4',
+						borderSpacing: 0
+				};
+				var bgcolor={
+					 backgroundColor:'#F2F2F2',
+					 border: '0.5px solid #E4E4E4'
+				};
+				var tbodyBgColor={
+ 					backgroundColor:'#FFFFFF',
+					border: '0.5px solid  #E4E4E4'
+				};
+				//遍历headers
+				const thList=headers.map((v)=>
+					  	<th style={bgcolor}>{v}</th>
+					 	);
+				const tbList=data.map((value)=>
+					<tr>
+							<td style={tbodyBgColor}>{value.id==null?"-":value.id}</td>
+							<td style={tbodyBgColor}>{value.name==null?"-":value.name}</td>
+							<td style={tbodyBgColor}>{value.itemId==null?"-":value.itemId}</td>
+							<td style={tbodyBgColor}>{value.size==null?"-":value.size}</td>
+							<td style={tbodyBgColor}>{value.price==null?"-":value.price}</td>
+							<td style={tbodyBgColor}>{value.date==null?"-":value.date}</td>
+							<td style={tbodyBgColor}>{value.note?"TRUE":"FALSE"}</td>
+							<td style={tbodyBgColor}>{value.temporary?"TRUE":"FALSE"}</td>
+					</tr>
+				);
+				console.log({tbList});
+				return (
+					<table style={table}>
+						<caption><b>显示数据</b></caption>
+						<thead>
+							<tr>{thList}</tr>
+						</thead>
+						<tbody>
+							{tbList}
+						</tbody>
+					</table>
+				);
+			}
+	}
+	ReactDOM.render(
+			<HelloMessage/>,
+			document.getElementById('oc2-table-div')
+	);
+	</script>
+</html>

@@ -1,0 +1,131 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.springboot</groupId>
+  <artifactId>SpringBoot</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+   <!-- 从Spring Boot继承默认配置 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.4.RELEASE</version>
+    </parent>
+	<!-- 使用freemarker前端模板进行开发 -->
+    <!-- 引入freeMarker的依赖包. -->  
+
+    <!-- 为Web应用程序添加依赖 -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>       
+         <!-- tomcat 的支持.-->
+	    <dependency>
+	      <groupId>org.springframework.boot</groupId>
+	      <artifactId>spring-boot-starter-tomcat</artifactId>
+	      <scope>provided</scope>
+	    </dependency>
+	    <!--添加适用于生产环境的功能，如性能指标和监测等功能。 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- ===================================数据访问层开始======================================= -->
+   		<!-- mysql依赖 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- mybatis依赖 -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-typehandlers-jsr310</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+       <!-- ======================================数据访问层结束====================================== -->
+       <!-- ======================================json数据处理开始====================================== -->
+		<dependency>
+		    <groupId>com.google.code.gson</groupId>
+		    <artifactId>gson</artifactId>
+		</dependency>
+		<!-- ======================================json数据处理结束====================================== -->
+		<!-- ========================================  工具包    ====================================  -->
+		
+		<!-- lombok -->
+		<dependency>
+		  <groupId>org.projectlombok</groupId>
+		  <artifactId>lombok</artifactId>
+		</dependency>
+		<!-- lombok结束 -->
+		<!-- commons-lang3 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>3.7</version>
+		</dependency>
+		<!-- commons-io -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>2.6</version>
+		</dependency>
+		<!-- ========================================  工具包结束   ====================================  -->
+        <dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-configuration-processor</artifactId>
+        	<optional>true</optional>
+        </dependency>
+       	<!-- 第三方接口 -->
+       	<!--阿里云大于短信接口 -->
+		<dependency>
+			<groupId>com.aliyun</groupId>
+			<artifactId>aliyun-java-sdk-core</artifactId>
+			<version>3.2.8</version>
+		</dependency>
+		 <dependency>
+		    <groupId>com.mycompany.myproduct1</groupId>
+		    <artifactId>java-sdk-4.1.0</artifactId>
+		    <version>1.0</version>
+		    <scope>system</scope>
+		    <systemPath>D:\eclipseWorkSpace\myjo_modle\lib\java-sdk-4.1.0.jar</systemPath>
+		</dependency>
+		<dependency>
+          <groupId>com.mycompany.myproduct1</groupId>
+          <artifactId>taobao-sdk-java-auto_1503566506246-20180411</artifactId>
+          <version>1.0</version>
+          <scope>system</scope>
+          <systemPath>E:/tx/autoOrder/lib/taobao-sdk-java-auto_1503566506246-20180411.jar</systemPath>
+       </dependency>
+       <dependency>
+          <groupId>com.mycompany.myproduct2</groupId>
+          <artifactId>taobao-sdk-java-auto_1503566506246-20180411-source</artifactId>
+          <version>1.0</version>
+          <scope>system</scope>
+          <systemPath>E:/tx/autoOrder/lib/taobao-sdk-java-auto_1503566506246-20180411-source.jar</systemPath>
+       </dependency>
+    </dependencies>
+    <!-- 打包成可执行jar文件 -->
+    <build>
+   		<finalName>cyc</finalName> 
+        <plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					 <includeSystemScope>true</includeSystemScope>
+	            	 <fork>true</fork>
+					 <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+				</configuration>
+				
+			</plugin>
+        </plugins>
+    </build>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+</project>
